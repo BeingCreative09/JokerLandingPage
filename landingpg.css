@@ -92,17 +92,18 @@ nav ul li a
 	font-weight: 200;
 
 }
-header nav .hamburger
+nav .hamburger
 {
 	position:relative;
-	width:31px;
-	height:31px;
+	width:32px;
+	height:32px;
 	outline: none;
 	border:none;
 	background: transparent;
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	justify-content: space-around;
 	overflow: hidden;
 	display: none;
@@ -110,94 +111,66 @@ header nav .hamburger
 .hamburger .hamp-top
 {
 	position: relative;
-}
-.hamburger .hamp-top .barspan
-{
-	position: absolute;
-	top:0;
-	left:0;
-	width: 30px;
+	display: inline-block;
+	width:30px;
 	height:3px;
 	display: inline-block;
 	background-color:white; 
 	transition: .3s ease-in-out;
 }
-.hamp-top .textspan
+.hamburger .hamp-top::before
 {
+	content:'ME';
 	position: absolute;
-	top:-6px;
-	left:0;
-	display: inline-block;
-	font-size: 14px;
+	top:-3px;
+	left:38px;
 	color:white;
-	text-align: center;
+	font-size: 16px;
+	font-weight: 400;
 	letter-spacing: 2px;
-	transform: translateX(33px);
-	transition: .3s ease-in-out;
 }
-.hamburger:hover .hamp-top .barspan
+.hamburger:hover .hamp-top
 {
-	transform: translateX(-32px);
+	transform: translateX(-34px);
 }
-.hamburger:hover .hamp-top .textspan
-{
-	transform: translateX(2px);
-}
-
 .hamburger .hamp-middle
 {
 	position: relative;
-}
-.hamburger .hamp-middle .barspan
-{
-	position: absolute;
-	top:0;
-	left:0;
-	width: 30px;
+	display: inline-block;
+	width:30px;
 	height:3px;
 	display: inline-block;
 	background-color:white; 
 	transition: .3s ease-in-out;
 }
-.hamburger:hover .hamp-middle .barspan
+.hamburger:hover .hamp-middle
 {
 	opacity:0;
 }
 .hamburger .hamp-bottom
 {
 	position: relative;
-}
-.hamburger .hamp-bottom .barspan
-{
-	position: absolute;
-	top:0;
-	left:0;
-	width: 30px;
+	display: inline-block;
+	width:30px;
 	height:3px;
 	display: inline-block;
 	background-color:white; 
 	transition: .3s ease-in-out;
 }
-.hamp-bottom .textspan
+.hamburger .hamp-bottom::before
 {
+	content:'NU';
 	position: absolute;
-	top:-12px;
-	left:0;
-	display: inline-block;
-	font-size: 14px;
+	top:-10px;
+	left:-30px;
 	color:white;
-	text-align: center;
+	font-size: 16px;
+	font-weight: 400;
 	letter-spacing: 2px;
-	transform: translateX(-32px);
-	transition: .3s ease-in-out;
 }
-.hamburger:hover .hamp-bottom .barspan
+.hamburger:hover .hamp-bottom
 {
-	transform: translateX(32px);
-}
-.hamburger:hover .hamp-bottom .textspan
-{
-	transform: translateX(2px);
+	transform: translateX(34px);
 }
 .hero
 {
