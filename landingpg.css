@@ -47,25 +47,29 @@ header nav .logo a span
 	position: relative;
 	color:white;
 }
-header nav ul 
+header nav .menus 
 {
  	display: flex;
  	justify-content: center;
  	align-items: center;
 }
-nav ul li
+.menus .closeBtn
+{
+	display: none;
+}
+nav .menus li
 {
 	position: relative;
 	margin-left:32px;
 }
-nav ul li.active:before
+nav .menus li.active:before
 {
 	width:50%;
 	height:1px;
 	transform: scaleX(1);
 	background-color: red;
 }
-nav ul li:before
+nav .menus li:before
 {
 	content:'';
 	position:absolute;
@@ -78,12 +82,12 @@ nav ul li:before
 	background-color: red;
 	transition:.5s ease-in-out;
 }
-nav ul li:hover:before
+nav .menus li:hover:before
 {
 	transform: scaleX(1);
 	transform-origin: right;
 }
-nav ul li a
+nav .menus li a
 {
 	font-size: 1em;
 	text-decoration: none;
@@ -170,7 +174,7 @@ nav .hamburger
 }
 .hamburger:hover .hamp-bottom
 {
-	transform: translateX(34px);
+	transform: translateX(1.71rem);
 }
 .hero
 {
@@ -426,9 +430,48 @@ nav .hamburger
 }
 @media (max-width:768px)
 {
-	header nav ul 
+	header nav .menus 
 	{
-		display: none;
+		position:fixed;
+		top:0;
+		left:0;
+		height:100vh;
+		width:100%;
+		background:black;
+		clip-path: circle(0.0% at 100% 0);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 10;
+		transition:all .5s ease-in-out;
+	}
+	header nav .menus.active
+	{
+		clip-path: circle(141.4% at 100% 0);
+	}
+	.menus .closeBtn
+	{
+		display: block;
+		position: absolute;
+		top:30px;
+		right:60px;
+		height:32px;
+		width:32px;
+		text-align: center;
+	}
+	nav .menus .closeBtn span
+	{
+		font-size:32px;
+		color:white;
+	}
+	nav .menus li
+	{
+		margin-top: 20px;
+		margin-left: 0px;
+	}
+	nav .menus li a
+	{
+		font-size: 1.4em;
 	}
 	header nav .hamburger
 	{
@@ -465,6 +508,14 @@ nav .hamburger
 	header nav {
 		padding: 20px 20px;
 	}
+	nav .menus .closeBtn
+	{
+		right:20px;
+	}
+	nav .menus li a
+	{
+		font-size: 1.2em;
+	}
 	.hero {
 		padding: 0px 20px;
 		align-items: center;
@@ -481,6 +532,7 @@ nav .hamburger
 		justify-content: center;
 		align-items: center;
 	}
+	
 	.content p
 	{
 		font-size: 0.55em;

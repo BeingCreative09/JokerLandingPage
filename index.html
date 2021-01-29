@@ -15,7 +15,10 @@
 					<a href="#">JO<span>KER</span></a>
 				</div>
 			
-				<ul>
+				<ul class="menus">
+					<div class="closeBtn">
+						<span class="fa fa-times"></span>
+					</div>
 					<li class="active"><a href="#">HOME</a></li>
 					<li><a href="#">GALLERY</a></li>
 					<li><a href="#">CAST</a></li>
@@ -59,4 +62,18 @@
 
 		</header>
 	</body>
+	<script>
+		window.addEventListener('load',function(){
+			var menus=document.querySelector('.menus');
+			var hamburger=document.querySelector('.hamburger');
+			var closeBtn=document.querySelector('.closeBtn');
+			hamburger.addEventListener('click',()=>{
+				menus.classList.add('active');
+			})
+			closeBtn.addEventListener('click',()=>{
+				menus.classList.remove('active');
+			})
+		})
+
+	</script>
 </html>
